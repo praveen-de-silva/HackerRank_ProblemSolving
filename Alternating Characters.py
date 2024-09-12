@@ -6,4 +6,4 @@ def setTarget(value):
 def alternatingCharacters(s):
     point = s[0]
     target = setTarget(point)
-    
+
