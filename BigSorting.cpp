@@ -2,31 +2,15 @@
 
 using namespace std;
 
-bool func(string s1, string s2) {
-    if (s1.size() > s2.size()) {
-        return false;
+bool sortAs(string s1, string s2) {
+    if (s1.size() != s2.size()) {
+        return s1.size() < s2.size();
     }
-    
-    else if (s1.size() < s2.size()) {
-        return true;
-    } 
-    
-    else {
-        for (int i=0; i<s1.size(); i++) {
-            if (s1[i] > s2[i]) {
-                return false;
-            } else if (s1[i] < s2[i]) {
-                return true;
-            }
-            
-            
-        }
-    }
-    
-    return false;
+
+    return s1 < s2;
 }
 
 vector<string> bigSorting(vector<string> unsorted) {
-    sort(unsorted.begin(), unsorted.end(), func);
+    sort(unsorted.begin(), unsorted.end(), sortAs);
     return unsorted;
 }
